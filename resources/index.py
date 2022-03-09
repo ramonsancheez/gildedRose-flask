@@ -1,5 +1,7 @@
 from flask_restful import Resource
+from services.service import service
 
 class index(Resource):
+
     def get(self):
-        return "hola"
+        return "BIENVENIDO A LA API DE OLLIVANDERS"
