@@ -12,3 +12,7 @@ class bd:
     @staticmethod
     def get_quality(numQuality):
         return db_atlas.connectDB().find({"quality": int(numQuality)}, {"_id":False})
+
+    @staticmethod
+    def get_sellIn(numSellIn):
+        return db_atlas.connectDB().find({"sell_in": int(numSellIn)}, {"_id":False})

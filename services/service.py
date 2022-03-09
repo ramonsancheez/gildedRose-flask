@@ -24,4 +24,12 @@ class service:
         for item in stock:
             items.append(item)
         return items
+
+    @staticmethod
+    def get_sellIn(numSellIn):
+        stock = bd.get_sellIn(numSellIn)
+        items = []
+        for item in stock:
+            items.append(item)
+        return items
     
