@@ -8,3 +8,7 @@ class bd:
     @staticmethod
     def get_nombre(itemNombre):
         return db_atlas.connectDB().find({"name": itemNombre}, {"_id":False})
+    
+    @staticmethod
+    def get_quality(numQuality):
+        return db_atlas.connectDB().find({"quality": int(numQuality)}, {"_id":False})
