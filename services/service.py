@@ -16,3 +16,12 @@ class service:
         for item in stock:
             items.append(item)
         return items
+
+    @staticmethod
+    def get_quality(numQuality):
+        stock = bd.get_quality(numQuality)
+        items = []
+        for item in stock:
+            items.append(item)
+        return items
+    
