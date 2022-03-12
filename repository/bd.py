@@ -16,3 +16,7 @@ class bd:
     @staticmethod
     def get_sellIn(numSellIn):
         return db_atlas.connectDB().find({"sell_in": int(numSellIn)}, {"_id":False})
+        
+    @staticmethod
+    def delete_item(deletedItemName):
+        db_atlas.connectDB().delete_one({"name":deletedItemName})
