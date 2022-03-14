@@ -35,13 +35,13 @@ class service:
     
     @staticmethod
     def delete_item(deletedItemName):
-        stock = bd.delete_item(deletedItemName)
+        bd.delete_item(deletedItemName)
         return "El item con nombre " + deletedItemName + " ha sido eliminado"
 
     @staticmethod
     def newItem(name, quality, sell_in):
         newItem = {"name": name, "quality": quality, "sell_in": sell_in}
-        stock = bd.newItem(newItem)
+        bd.newItem(newItem)
         return "El item se ha creado correctamente"
 
     @staticmethod
