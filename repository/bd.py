@@ -20,3 +20,7 @@ class bd:
     @staticmethod
     def delete_item(deletedItemName):
         db_atlas.connectDB().delete_one({"name":deletedItemName})
+    
+    @staticmethod
+    def newItem(newItem):
+        db_atlas.connectDB().insert_one(newItem)
