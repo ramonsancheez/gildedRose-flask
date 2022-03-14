@@ -24,3 +24,9 @@ class bd:
     @staticmethod
     def newItem(newItem):
         db_atlas.connectDB().insert_one(newItem)
+
+    @staticmethod
+    def updateItem(item, quality, sell_in):
+        updatedItem = {"name": item}
+        updatedInfo = {"$set": {"quality": int(quality), "sell_in": int(sell_in)}}
+        db_atlas.connectDB().update_one(updatedItem, updatedInfo)

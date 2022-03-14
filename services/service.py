@@ -44,4 +44,9 @@ class service:
         stock = bd.newItem(newItem)
         return "El item se ha creado correctamente"
 
+    @staticmethod
+    def updateItem(item, quality, sell_in):
+        bd.updateItem(item, quality, sell_in)
+        return service.get_nombre(item)
+
         
