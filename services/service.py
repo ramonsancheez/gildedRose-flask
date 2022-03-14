@@ -36,8 +36,7 @@ class service:
     @staticmethod
     def delete_item(deletedItemName):
         stock = bd.delete_item(deletedItemName)
-        if service.get_nombre(deletedItemName) == []:
-            return "No se ha podido eliminar ya que no existe ningun objeto con ese nombre"
-        else:
-            return "El item con nombre " + deletedItemName + " ha sido eliminado"
+        return "El item con nombre " + deletedItemName + " ha sido eliminado"
     
+
+        
