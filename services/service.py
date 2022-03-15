@@ -35,8 +35,11 @@ class service:
     
     @staticmethod
     def delete_item(deletedItemName):
-        bd.delete_item(deletedItemName)
-        return "El item con nombre " + deletedItemName + " ha sido eliminado"
+        if service.get_nombre(deletedItemName) == []:
+            return "No se ha podido encontrar el item: " + deletedItemName+ ", que desea eliminar"
+        else:
+            bd.delete_item(deletedItemName)
+            return "El item con nombre " + deletedItemName + " ha sido eliminado"
 
     @staticmethod
     def newItem(name, quality, sell_in):
