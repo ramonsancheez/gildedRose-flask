@@ -10,6 +10,14 @@ class service:
         return items
     
     @staticmethod
+    def get_oneItem(name, quality, sell_in):
+        stock = bd.get_oneItem(name, quality, sell_in)
+        items = []
+        for item in stock:
+            items.append(item)
+        return items
+
+    @staticmethod
     def get_nombre(itemNombre):
         stock = bd.get_nombre(itemNombre)
         items = []

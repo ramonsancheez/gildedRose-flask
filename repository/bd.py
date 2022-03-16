@@ -6,6 +6,10 @@ class bd:
         return db_atlas.connectDB().find({},{"_id":False})
     
     @staticmethod
+    def get_oneItem(name, quality, sell_in):
+        return db_atlas.connectDB().find({"name": name, "quality": int(quality), "sell_in": int(sell_in)}, {"_id":False})
+
+    @staticmethod
     def get_nombre(itemNombre):
         return db_atlas.connectDB().find({"name": itemNombre}, {"_id":False})
     
