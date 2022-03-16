@@ -1,11 +1,10 @@
 from items.normalItem import normalItem
-class AgedBrie(normalItem):
+class Conjured(normalItem):
+    def __init__(self, name, quality, sellIn):
+        super().__init__(name, quality, sellIn)
     
-    def __init__(self, name, sellIn, quality):
-        super().__init__(name, sellIn, quality)
-
     def changeQuality(self):
-        qualityModified = 1
+        qualityModified = -2
         if self.sellIn < 0:
-            qualityModified += 1
+            qualityModified = -4 
         self.setQuality(self.getQuality() + qualityModified)

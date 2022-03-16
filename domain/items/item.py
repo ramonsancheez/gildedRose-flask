@@ -1,11 +1,8 @@
-from items.normalItem import normalItem
-class AgedBrie(normalItem):
-    
+class Item:
     def __init__(self, name, sellIn, quality):
-        super().__init__(name, sellIn, quality)
-
-    def changeQuality(self):
-        qualityModified = 1
-        if self.sellIn < 0:
-            qualityModified += 1
-        self.setQuality(self.getQuality() + qualityModified)
+        self.name = name
+        self.sellIn = sellIn
+        self.quality = quality
+    
+    def __repr__(self):
+        return "%s, %s, %s" % (self.name, self.sellIn, self.quality)
