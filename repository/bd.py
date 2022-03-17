@@ -7,7 +7,7 @@ class bd:
     
     @staticmethod
     def get_oneItem(name, quality, sell_in):
-        return db_atlas.connectDB().find({"name": name, "quality": quality,"sell_in": sell_in}, {"_id":False})
+        return db_atlas.connectDB().find({"name": name, "quality": int(quality),"sell_in": int(sell_in)}, {"_id":False})
 
     @staticmethod
     def get_nombre(itemNombre):
@@ -15,11 +15,11 @@ class bd:
     
     @staticmethod
     def get_quality(numQuality):
-        return db_atlas.connectDB().find({"quality": numQuality}, {"_id":False})
+        return db_atlas.connectDB().find({"quality": int(numQuality)}, {"_id":False})
 
     @staticmethod
     def get_sellIn(numSellIn):
-        return db_atlas.connectDB().find({"sell_in": numSellIn}, {"_id":False})
+        return db_atlas.connectDB().find({"sell_in": int(numSellIn)}, {"_id":False})
         
     @staticmethod
     def delete_item(deletedItemName):
@@ -32,5 +32,5 @@ class bd:
     @staticmethod
     def updateItem(item, quality, sell_in):
         updatedItem = {"name": item}
-        updatedInfo = {"$set": {"quality": quality, "sell_in": sell_in}}
+        updatedInfo = {"$set": {"quality": int(quality), "sell_in": int(sell_in)}}
         db_atlas.connectDB().update_one(updatedItem, updatedInfo)

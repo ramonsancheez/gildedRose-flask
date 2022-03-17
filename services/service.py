@@ -54,7 +54,7 @@ class service:
         items = ["Conjured", "Sulfuras", "Aged_brie", "Back_stage", "Normal_item"]
         name = name.capitalize()
         if name in items:
-            newItem = {"name": name, "quality": quality, "sell_in": sell_in}
+            newItem = {"name": name, "quality": int(quality), "sell_in": int(sell_in)}
             bd.newItem(newItem)
             return "El item se ha creado correctamente"
         else:
