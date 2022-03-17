@@ -51,13 +51,15 @@ class service:
 
     @staticmethod
     def newItem(name, quality, sell_in):
-        newItem = {"name": name, "quality": quality, "sell_in": sell_in}
-        bd.newItem(newItem)
-        return "El item se ha creado correctamente"
+        items = ["Conjured", "Sulfuras", "Aged_brie", "Back_stage", "Normal_item"]
+        if name in items:
+            newItem = {"name": name, "quality": quality, "sell_in": sell_in}
+            bd.newItem(newItem)
+            return "El item se ha creado correctamente"
+        else:
+            return "No se ha podido crear el item: " + name
 
     @staticmethod
     def updateItem(item, quality, sell_in):
         bd.updateItem(item, quality, sell_in)
         return service.get_nombre(item)
-
-        
