@@ -52,6 +52,7 @@ class service:
     @staticmethod
     def newItem(name, quality, sell_in):
         items = ["Conjured", "Sulfuras", "Aged_brie", "Back_stage", "Normal_item"]
+        name = name.capitalize()
         if name in items:
             newItem = {"name": name, "quality": quality, "sell_in": sell_in}
             bd.newItem(newItem)
